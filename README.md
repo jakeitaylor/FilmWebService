@@ -9,3 +9,15 @@ To run the local version:
 2. Start Eclipse and import the project (File>Import>Existing Projects to Workspace).  
 3. Run the project on Google App Engine.  
 4. Navigate to http://localhost:8080/ to view the project.
+
+## Required Software
+- Eclipse IDE
+- Google Cloud Eclipse plugin
+-- To setup: Navigate to the Eclipse Marketplace (Help->Eclipse Marketplace) and install Google Cloud Tools.
+- Google App Engine server running on Eclipse
+-- To setup: NAvigate to servers tab and create a new server. Under the Google folder select App Engine Standard and ensure the details are setup correctly:
+```bash
+Host name: localhost
+Server port: 8080
+```
+These are the tools required in order to run the project. To run the project locally on Google App Engine, see the above installation and setup guide.
