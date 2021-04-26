@@ -12,10 +12,10 @@ To run the local version:
 
 ## Required Software
 - Eclipse IDE
-- Google Cloud Eclipse plugin
+- Google Cloud Eclipse plugin  
 -- To setup: Navigate to the Eclipse Marketplace (Help->Eclipse Marketplace) and install Google Cloud Tools.
-- Google App Engine server running on Eclipse
--- To setup: NAvigate to servers tab and create a new server. Under the Google folder select App Engine Standard and ensure the details are setup correctly:
+- Google App Engine server running on Eclipse  
+-- To setup: Navigate to servers tab and create a new server. Under the Google folder select App Engine Standard and ensure the details are setup correctly:
 ```bash
 Host name: localhost
 Server port: 8080
