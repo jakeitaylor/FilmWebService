@@ -1,0 +1,122 @@
+<!-- html DOCTYPE to notify the browser of the files content. Also required by Bootstrap to function. -->
+<!DOCTYPE html>
+
+<!-- Open HTML, set language to English (Useful for accessibility/usability) -->
+<html lang="en">
+
+	<!-- Open head to declare meta and script links. -->
+	<head>
+		<!-- Set title of the page -->
+		<title>Film API Search</title>
+		
+		<!-- Declare page meta - Sets the character set to UTF-8 (most widely used) and the viewport to ensure responsiveness on devices. -->
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	
+    	<!-- Include Bootstrap and custom JS scripts for AJAX and film utilities. -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"/>
+		<script src="./scripts/film-utils.js" type="text/javascript"></script>
+		
+		<!-- Include FontAwesome library for icons. -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+	</head>
+	
+	<body>
+	<!-- Main Body -->
+		<main>
+			<!-- Bootstrap card class - used for simple styling. -->
+			<div class="card">
+				<div class="card-body">
+					<h2>Film Database</h2>
+					<hr>
+					
+					<!-- Place the insert film and search films cards on the same row. -->
+					<div class="row">
+					
+						<!-- Bootstrap Styling: make this section 4/12 of the screen area. -->
+						<div class="col-3">
+							<div class="card mb-4">
+                            	<div class="card-header">
+                            		<!-- Declare a font-awesome icon for styling purposes. -->
+                                	<i class="fas fa-plus"></i>
+                                    Insert Film
+                                </div>
+                                <div class="card-body">
+                                	<!-- HTML form for inserting a film, invokes JS method when button is pressed. -->
+                                	<form name="insertForm" action="" method="post">
+										<label>Title <input class="form-control" type="text" id="title"></label><br>
+										<label>Director <input class="form-control" type="text" id="director"></label><br>
+										<label>Year <input class="form-control" type="text" id="year"></label><br>
+										<label>Stars <input class="form-control" type="text" id="stars"></label><br>
+										<label>Review <textarea class="form-control" id="review"></textarea></label><br><br>
+										<input type="button" value="Insert" onclick='insertFilm("title", "director", "year", "stars", "review", "insert-film-result")'/>
+									</form>
+									
+									<!-- Placeholder object used for inserting AJAX data. -->
+									<div id="insert-film-result"></div>
+								</div>
+							</div>
+						</div>					
+				
+						<div class="col-9">
+							<div class="card mb-4">
+                            	<div class="card-header">
+                                	<i class="fas fa-search"></i>
+									Search Films
+                                </div>
+                                <div class="card-body">
+                                	<!-- Format selector, format is passed as a parameter to search films. -->
+									<label>
+										Format: 
+										<select id="format-subset">
+											<option value="json">JSON</option>
+											<option value="xml">XML</option>
+											<option value="text">Text</option>
+										</select>
+									</label>
+									<label>
+										<!-- User inputs search query. -->
+										<input type="text" id="search-query">
+									</label>
+									<!-- Button calls function to return AJAX data of the search. -->
+									<input type="button" value="Search" onclick='showSubsetFilms("search-query", "subset-films-result", "format-subset")'/>
+									
+									<!-- Placeholder object for AJAX calls. -->
+								  	<div id="subset-films-result"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Start a new row spanning all 12 columns (needed for getting all films as it is a large dataset). -->
+					<div class="row">
+						
+						<div class="col-12">
+							<div class="card mb-4">
+                            	<div class="card-header">
+                                	<i class="fas fa-table"></i>
+                                    Get All Films
+                                </div>
+                                <div class="card-body">
+									<label>
+										Format: 
+										<select id="format-all">
+											<option value="json">JSON</option>
+											<option value="xml">XML</option>
+											<option value="text">Text</option>
+										</select>
+									</label>
+									<input type="button" value="Search" onclick='showAllFilms("all-films-result", "format-all")'/>
+								  	<div id="all-films-result"></div>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</main>
+        
+	</body>
+
+</html>

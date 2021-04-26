@@ -20,4 +20,5 @@ To run the local version:
 Host name: localhost
 Server port: 8080
 ```
-These are the tools required in order to run the project. To run the project locally on Google App Engine, see the above installation and setup guide.
+These are the tools required in order to run the project. To run the project locally on Google App Engine, see the above installation and setup guide.  
+Please note: Login details are not available on the GitHub files. The files uploaded as assignment submission contain the correct MySQL details.
